@@ -13,26 +13,16 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    width: "100%",
     justifyContent: "center",
     fontSize: "calc(10px + 2vmin)",
-    color: "black",
+    marginTop: "35px",
   },
 
-  Button1: {
-    backgroundColor: "white",
-    width: "110px",
-    height: "80px",
-    borderRadius: "300px",
-    marginBottom: "25px",
-    marginLeft: "25px",
-    textAlign: "center",
-  },
-
-  bold: {
+  Button: {
     fontWeight: "bold",
-    textDecoration: "underline",
-    color: "black",
-    fontSize: "25px",
+    color: "white",
+    marginLeft: "25px",
   },
 
   Red: {
@@ -41,6 +31,7 @@ const styles = {
     height: "50px",
     marginBottom: "25px",
     marginLeft: "25px",
+    border: "10px",
   },
 
   Violet: {
@@ -80,6 +71,7 @@ const styles = {
     margin: "1rem auto",
     display: "block",
     width: "40%",
+    color: "red",
   },
 };
 
