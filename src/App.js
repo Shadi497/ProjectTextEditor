@@ -3,36 +3,41 @@ import { useState } from "react";
 
 function App() {
   const [textColor, setTextColor] = useState("black");
+  const [statusB, setStatusB] = useState(true);
+  const [statusI, setStatusI] = useState(true);
+  const [statusU, setStatusU] = useState(true);
+
   const [bold, setBold] = useState("");
   const [italic, setItalic] = useState("");
   const [underline, setUnderline] = useState("");
 
-  // const [style, setStyle] = useState({
-  //   weight: "",
-  //   underline: "",
-  //   italics: "",
-  // });
-
-  const toggleTheme = (event) => {
+  const txtcolor = (event) => {
     setTextColor(event.target.name);
-    setBold(event.target.name);
-    setItalic(event.target.name);
-    setUnderline(event.target.name);
   };
 
-  // const toggleFont = (event) => {
-  //   setStyle({ [event.target.name]: event.target.value });
-  // };
+  const boldfont = (event) => {
+    setBold(statusB ? event.target.name : "");
+    setStatusB(!statusB);
+  };
+
+  const italics = (event) => {
+    setItalic(statusI ? event.target.name : "");
+    setStatusI(!statusI);
+  };
+
+  const underl = (event) => {
+    setUnderline(statusU ? event.target.name : "");
+    setStatusU(!statusU);
+  };
 
   return (
     <div style={styles.Appheader}>
       <div style={styles.Appheader2}>
-        <text>{toggleTheme}</text>
         <button
           type="button"
           class="btn btn-info "
           style={styles.Button}
-          onClick={toggleTheme}
+          onClick={boldfont}
           name="bold"
         >
           BOLD
@@ -42,7 +47,7 @@ function App() {
           type="button"
           class="btn btn-info "
           style={styles.Button}
-          onClick={toggleTheme}
+          onClick={italics}
           name="italic"
         >
           ITALICS
@@ -51,7 +56,7 @@ function App() {
           type="button"
           class="btn btn-info "
           style={styles.Button}
-          onClick={toggleTheme}
+          onClick={underl}
           name="underline"
         >
           UNDERLINE
@@ -68,23 +73,11 @@ function App() {
         }}
       ></input>
       <div style={styles.Appheader2}>
-        <button style={styles.Red} onClick={toggleTheme} name="red"></button>
-        <button
-          style={styles.Yellow}
-          onClick={toggleTheme}
-          name="yellow"
-        ></button>
-        <button
-          style={styles.Black}
-          onClick={toggleTheme}
-          name="black"
-        ></button>
-        <button style={styles.Blue} onClick={toggleTheme} name="blue"></button>
-        <button
-          style={styles.Violet}
-          onClick={toggleTheme}
-          name="violet"
-        ></button>
+        <button style={styles.Red} onClick={txtcolor} name="red"></button>
+        <button style={styles.Yellow} onClick={txtcolor} name="yellow"></button>
+        <button style={styles.Black} onClick={txtcolor} name="black"></button>
+        <button style={styles.Blue} onClick={txtcolor} name="blue"></button>
+        <button style={styles.Violet} onClick={txtcolor} name="violet"></button>
       </div>
     </div>
   );
